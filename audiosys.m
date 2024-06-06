@@ -106,7 +106,7 @@ elseif numChannels > 1 % Stereo or Dolby
     xlabel('samples')
     ylabel('voltage')
     % 2. Dolby -> Stereo
-    if ext == 'ac3'
+    if ext == "ac3" || numChannels > 2
         left_range = mean(audioData(:,1:floor(numChannels/2)),2);
         right_range = mean(audioData(:,floor(numChannels/2)+1:numChannels),2);
         stereo_audio = [left_range right_range];
